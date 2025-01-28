@@ -3,7 +3,7 @@ import pandas as pd
 from .MaximizeL import MaximizeLikelihood
 from .QAEResult import QAEResult
 
-def RQAE(a, K, R, method='L-BFGS-B'):
+def RQAE(a, K, R):
 
     theta = np.arcsin(np.sqrt(a))
     thetaMuls = []
@@ -24,5 +24,5 @@ def RQAE(a, K, R, method='L-BFGS-B'):
                 n1s.append(n1)
 
     resDf = pd.DataFrame(dict(thetaMul=thetaMuls, nShot=nShots, n1=n1s))
-    return QAEResult(MaximizeLikelihood(np.array(thetaMuls), np.array(nShots), np.array(n1s), method=method), resDf)
+    return QAEResult(MaximizeLikelihood(np.array(thetaMuls), np.array(nShots), np.array(n1s)), resDf)
 

@@ -22,4 +22,3 @@ def LowDepthQAE(a, epsilon, nShot, beta):
     
     resDf = pd.DataFrame(dict(thetaMul=thetaMuls, nShot=nShots, n1=n1s))
     return QAEResult(MaximizeLikelihood(np.array(thetaMuls), np.array(nShots), np.array(n1s)), resDf)
-
