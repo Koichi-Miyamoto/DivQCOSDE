@@ -6,7 +6,7 @@ from .QAEResult import QAEResult
 def LowDepthQAE(a, epsilon, nShot, beta):
 
     theta = np.arcsin(np.sqrt(a))
-    K = int(np.ceil(max(epsilon**(-2*beta), np.log(1/epsilon))))
+    K = int(np.ceil(max(round(epsilon**(-2*beta), 5), np.log(1/epsilon))))
     thetaMuls = []
     nShots = []
     n1s = []
